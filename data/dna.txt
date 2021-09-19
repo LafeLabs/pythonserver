@@ -12,6 +12,13 @@
         "dna.txt",
         "set.txt"
     ],
+    "iconsymbols": [
+        "delete.svg",
+        "edit.svg",
+        "home.svg",
+        "lightdark.svg",
+        "scroll.svg"
+    ],
     "php": [
         "copy.txt",
         "dir.txt",
@@ -25,5 +32,9 @@
         "replicator.txt",
         "setreplicator.txt",
         "text2php.txt"
+    ],
+    "code": [
+        "liveplot",
+        "plot1"
     ]
 }
