@@ -2,16 +2,12 @@
     "html": [
         "README.md",
         "codedelete.html",
-        "copy.html",
-        "fork.html",
         "index.html",
         "readme.html",
-        "scrolleditor.html",
-        "set.html"
+        "scrolleditor.html"
     ],
     "data": [
-        "dna.txt",
-        "set.txt"
+        "dna.txt"
     ],
     "iconsymbols": [
         "delete.svg",
@@ -21,18 +17,13 @@
         "scroll.svg"
     ],
     "php": [
-        "copy.txt",
         "deletefile.txt",
         "dir.txt",
         "dnagenerator.txt",
         "editor.txt",
         "fileloader.txt",
         "filesaver.txt",
-        "mkdir.txt",
-        "rdelete.txt",
-        "removephp.txt",
         "replicator.txt",
-        "setreplicator.txt",
         "text2php.txt"
     ],
     "code": [
