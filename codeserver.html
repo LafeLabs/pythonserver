@@ -22,17 +22,12 @@ CC0
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "index.html">
-                <img src = "iconsymbols/home.svg"/>
-            </a>
-        </td>
-        <td>
             <a href = "readme.html">
                 <img src = "iconsymbols/scroll.svg"/>
             </a>
         </td>
         <td>
-            <a href = "scrolldelete.html">
+            <a href = "codedelete.html">
                 <img src = "iconsymbols/delete.svg"/>
             </a>
         </td>
@@ -63,6 +58,8 @@ CC0
 </div>
 
 <script>
+prototypescroll = document.getElementById("prototypescroll").innerHTML;
+
 editor = ace.edit("maineditor");
 editor.setTheme("ace/theme/github");
 //editor.setTheme("ace/theme/vibrant_ink");
@@ -144,26 +141,93 @@ document.getElementById("lightdarkbutton").onclick = function(){
     if(lightmode){
 
         editor.setTheme("ace/theme/github");
-
+        document.body.style.backgroundColor = "#a0a0a0";
+        document.body.style.color = "black";
+        document.getElementById("newscrollinput").style.backgroundColor = "#a0a0a0";
+        document.getElementById("newscrollinput").style.color = "black";
 
     }
     else{
-
         editor.setTheme("ace/theme/vibrant_ink");
-     
+        document.body.style.backgroundColor = "#202020";
+        document.body.style.color = "white";
+        document.getElementById("newscrollinput").style.backgroundColor = "#202020";
+        document.getElementById("newscrollinput").style.color = "white";        
     }
 }
+
+document.body.style.backgroundColor = "#202020";
+document.body.style.color = "white";
+document.getElementById("newscrollinput").style.backgroundColor = "#202020";
+document.getElementById("newscrollinput").style.color = "white";        
 
 editor.setTheme("ace/theme/vibrant_ink");
 
         
 document.getElementById("newscrollinput").value = "";
 
+name = "";
 document.getElementById("newscrollinput").onchange = function(){
-    
+    name = this.value;
+    currentFile = "code/" + name;
+    var httpc = new XMLHttpRequest();
+    httpc.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            filedata = this.responseText;
+            if(filedata.length == 0){
+                scroll = prototypescroll;
+                scroll = scroll.replace(/name/g,name);
+                editor.setValue(scroll);  
+                
+                data = encodeURIComponent(scroll);
+                var httpc = new XMLHttpRequest();
+                var url = "filesaver.php";        
+                httpc.open("POST", url, true);
+                httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+                httpc.send("data="+data+"&filename=" + currentFile);//send text to filesaver.php
+                addcodelink(name);
+                
+            }
+            else{
+                editor.setValue(filedata);                
+            }
+
+            document.getElementById("currentfilename").innerHTML = currentFile;
+        }
+    };
+    httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+    httpc.send();
     
 }
 
+
+
+function addcodelink(codename){
+    var newscrollbutton = document.createElement("div");
+    newscrollbutton.classList.add("file");
+    newscrollbutton.classList.add("python");
+    newscrollbutton.innerHTML = "code/" + codename;
+    document.getElementById("filescroll").appendChild(newscrollbutton);
+    newscrollbutton.onclick = function(){
+        currentFile = this.innerHTML;
+        //use php script to load current file;
+        var httpc = new XMLHttpRequest();
+        httpc.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                filedata = this.responseText;
+                editor.setValue(filedata);
+                var fileType = currentFile.split("/")[0]; 
+                var fileName = currentFile.split("/")[1];
+              
+            }
+        };
+        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+        httpc.send();
+                
+        document.getElementById("currentfilename").innerHTML = currentFile;
+                
+    }
+}
 
 </script>
 <style>
@@ -172,20 +236,23 @@ document.getElementById("newscrollinput").onchange = function(){
     left:10px;
     top:10px;
     font-family:courier;
-    background-color:black;
-    color:white;
+}
+#newscrollinput{
+    font-family:courier;
+    
 }
 #linktable{
     position:absolute;
     right:10px;
     top:10px;
+    background-color:#808080;
 }
 body{
-    background-color:#b0b0b0;
+
+    
 }
 input{
     font-family:courier;
-    background-color:black;
     color:white;
 }
 
@@ -211,7 +278,6 @@ input{
     border:solid;
     border-radius:5px;
     border-width:3px;
-    background-color:white;
     font-family:courier;
     font-size:22px;
     z-index:99999999;

@@ -1,6 +1,8 @@
 {
     "html": [
         "README.md",
+        "codedelete.html",
+        "codeserver.html",
         "copy.html",
         "fork.html",
         "index.html",
@@ -21,6 +23,7 @@
     ],
     "php": [
         "copy.txt",
+        "deletefile.txt",
         "dir.txt",
         "dnagenerator.txt",
         "editor.txt",
