@@ -27,7 +27,7 @@
         "text2php.txt"
     ],
     "code": [
-        "liveplot",
-        "plot1"
+        "liveplot.py",
+        "plot1.py"
     ]
 }
