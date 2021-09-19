@@ -42,7 +42,15 @@
 </head>
 <body>    
 <div id = "scrollscroll"></div>
-<a id = "editlink" href= "scrolleditor.html">EDIT</a>
+
+<a id = "homelink" href= "index.html">
+    <img src = "iconsymbols/home.svg"/>    
+</a>
+
+<a id = "editlink" href= "scrolleditor.html">
+    <img src = "iconsymbols/edit.svg"/>    
+</a>
+
 <script>
 
 
@@ -108,12 +116,15 @@ body{
 h1,h2,h3,h4{
     text-align:center;
 }
-
-#editlink{
+#homelink{
     position:absolute;
     right:0px;
     top:0px;
-    font-size:2em;
+}
+#editlink{
+    position:absolute;
+    right:0px;
+    top:200px;
 }
 @media only screen and (orientation: landscape) {
     #scrollscroll{

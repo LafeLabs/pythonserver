@@ -1,133 +1,308 @@
-<!doctype html>
-<html lang="en">
+ <!doctype html>
+<html>
 <head>
-    <meta charset="utf-8">
+ <!-- 
+PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
-    <!--
+CC0
+-->
 
-        EVERYTHING IS PHYSICAL 
-        EVERYTHING IS FRACTAL
-        EVERYTHING IS RECURSIVE
-        NO MONEY 
-        MO MINING 
-        NO PROPERTY
-        LOOK AT THE INSECTS
-        LOOK AT THE FUNGI
-        LANGUAGE IS HOW THE MIND PARSES REALITY 
-
-    -->
-    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP///wANAP8A5Dz6ABueRwAAt/8A6BonABo86AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAREREREREREREREAAAEREREREQCIgREREd3dwAAB3d3d3d3d3d3d3d3d3d3d3d3d3VVVVVVVQAFVVAAVVVQIiBRAiIBEQIAIBECAAERAgAgFgIABmYCIiBmAiIGZgIiIGYCIgZmYCIAaIAAMzMzAAiIiIiIiIiIiIiIiIiIiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
-
-    <!--Stop Google:-->
-    <META NAME="robots" CONTENT="noindex,nofollow">
-
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.js"></script>
-
-<!--       un comment to use math
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script>
-            MathJax.Hub.Config({
-                tex2jax: {
-                inlineMath: [['$','$'], ['\\(','\\)']],
-                processEscapes: true,
-                processClass: "mathjax",
-                ignoreClass: "no-mathjax"
-                }
-            });//			MathJax.Hub.Typeset();//tell Mathjax to update the math
-        </script>
-    -->
-
+<!--Stop Google:-->
+<META NAME="robots" CONTENT="noindex,nofollow">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAETT//9E0///RNP//0TT//9E0///RNP//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAETT//9E0///RNP//0TT//9E0/////////////9E0///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABE0///RNP//0TT//9E0///RNP/////////////RNP//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARNP//0TT//9E0///RNP//0TT//9E0///RNP//0TT//8AAAAAAAAAAAAAAAAAAAAAAAAAAJ9wOv+fcDr/n3A6/0TT/5hE0///RNP//0TT//9E0///RNP//0TT//9E0///RNP//0TT//9E0///AAAAAJ9wOv+fcDr/n3A6/59wOv+fcDqVRNP//0TT//9E0///RNP//0TT//9E0///RNP//0TT//9E0///RNP//0TT//+fcDr/n3A6/59wOv+fcDr/RNP/mETT//9E0///RNP//0TT//9E0///RNP//0TT//9E0///RNP//0TT//9E0///n3A6/59wOv+fcDr/n3A6/59wOpVE0/+YRNP/mETT/5hE0/+YRNP/mETT/5hE0///RNP//0TT//9E0///RNP//59wOv+fcDr/n3A6/59wOv+fcDr/n3A6lZ9wOpWfcDqVn3A6lZ9wOpWfcDqVn3A6lUTT//9E0///RNP//0TT//+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/0TT/5hE0///RNP//0TT//9E0///n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDqVRNP//0TT//9E0///RNP//wAAAACfcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv+fcDr/RNP/mETT//9E0///RNP//wAAAAAAAAAAAAAAAAAAAAAAAAAAn3A6/59wOv+fcDr/n3A6/59wOv+fcDr/n3A6/59wOv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ9wOv///////////59wOv+fcDr/n3A6/59wOv+fcDr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACfcDr///////////+fcDr/n3A6/59wOv+fcDr/n3A6/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ9wOv+fcDr/n3A6/59wOv+fcDr/n3A6/wAAAAAAAAAAAAAAAAAAAAAAAAAA+B8AAPAPAADwDwAA8A8AAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAA8A8AAPAPAADwDwAA+B8AAA==" rel="icon" type="image/x-icon" />
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+<title>Python Code Server</title>
 </head>
-<body>    
-<div id = "scrollscroll"></div>
-<a id = "editlink" href= "scrolleditor.html">EDIT</a>
+<body>
+<div id = "prototypescroll" style = "display:none"># new python program
+#name
+</div>
+
+<table id = "linktable">
+    <tr>
+        <td id = "lightdarkbutton"  class = "button">
+                <img src = "iconsymbols/lightdark.svg"/>
+        </td>
+        <td>
+            <a href = "codedelete.html">
+                <img src = "iconsymbols/delete.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "readme.html">
+                <img src = "iconsymbols/scroll.svg"/>
+            </a>
+        </td>
+
+    </tr>
+</table>
+
+
+<table id = "inputtable">
+    <tr>
+        <td>Current Program:</td>
+        <td id = "currentfilename"></td>
+    </tr>
+    <tr>
+        <td>New Program Name:</td>
+        <td><input id = "newscrollinput"/></td>
+    </tr>
+</table>
+
+<div id="maineditor" contenteditable="true" spellcheck="false"></div>
+
+
+<div id = "filescroll">
+
+</div>
+
 <script>
+prototypescroll = document.getElementById("prototypescroll").innerHTML;
+
+editor = ace.edit("maineditor");
+editor.setTheme("ace/theme/github");
+//editor.setTheme("ace/theme/vibrant_ink");
+editor.getSession().setMode("ace/mode/python");
+editor.getSession().setUseWrapMode(true);
+editor.$blockScrolling = Infinity;
+editor.setTheme("ace/theme/vibrant_ink");
+
+currentFile = "code/plot1";
+var httpc = new XMLHttpRequest();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        filedata = this.responseText;
+        editor.setValue(filedata);
+        document.getElementById("currentfilename").innerHTML = currentFile;
+    }
+};
+httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+httpc.send();
 
 
-scroll = "";
-rawhtml = "";
-var converter = new showdown.Converter();
-// for more on options see here:
-// https://github.com/showdownjs/showdown/wiki/Showdown-Options
-converter.setOption('literalMidWordUnderscores', 'true');
-converter.setOption('tables', 'true')
-    
-filename = "README.md";
-loadscroll("README.md");
 
-
-function loadscroll(scrollname){
-    filename = scrollname;
-
-    document.getElementById("scrollscroll").innerHTML = "";
-    document.getElementById("scrollscroll").style.display = "block";
-    var httpc666 = new XMLHttpRequest();
-    httpc666.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            scroll = this.responseText;
-            rawhtml = converter.makeHtml(scroll);
-            document.getElementById("scrollscroll").innerHTML = rawhtml;
-
-            //			MathJax.Hub.Typeset();//tell Mathjax to update the math
-    //			MathJax.Hub.Typeset();//tell Mathjax to update the math
+scrolls = [];
+var httpc8 = new XMLHttpRequest();
+httpc8.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        scrolls = JSON.parse(this.responseText);
+        for(var index = 0;index < scrolls.length;index++) {    
+            var newscrollbutton = document.createElement("div");
+            newscrollbutton.classList.add("file");
+            newscrollbutton.classList.add("python");
+            newscrollbutton.innerHTML = "code/" + scrolls[index];
+            document.getElementById("filescroll").appendChild(newscrollbutton);
+            newscrollbutton.onclick = function(){
+                currentFile = this.innerHTML;
+                //use php script to load current file;
+                var httpc = new XMLHttpRequest();
+                httpc.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        filedata = this.responseText;
+                        editor.setValue(filedata);
+                        var fileType = currentFile.split("/")[0]; 
+                        var fileName = currentFile.split("/")[1];
+                      
+                    }
+                };
+                httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+                httpc.send();
+                
+                document.getElementById("currentfilename").innerHTML = currentFile;
+                
+            }
         }
-    };
-    httpc666.open("GET", "fileloader.php?filename=" + scrollname, true);
-    httpc666.send();
-    //MathJax.Hub.Typeset();//tell Mathjax to update the math
+    }
+};
+
+httpc8.open("GET", "dir.php?filename=code", true);
+httpc8.send();
+
+
+document.getElementById("currentfilename").innerHTML = currentFile;
+
+document.getElementById("maineditor").onkeyup = function(){
+    data = encodeURIComponent(editor.getSession().getValue());
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+    var fileType = currentFile.split("/")[0]; 
+    var fileName = currentFile.split("/")[1];
 }
 
+
+
+lightmode = false;
+document.getElementById("lightdarkbutton").onclick = function(){
+    lightmode = !lightmode;
+    if(lightmode){
+
+        editor.setTheme("ace/theme/github");
+        document.body.style.backgroundColor = "#a0a0a0";
+        document.body.style.color = "black";
+        document.getElementById("newscrollinput").style.backgroundColor = "#a0a0a0";
+        document.getElementById("newscrollinput").style.color = "black";
+
+    }
+    else{
+        editor.setTheme("ace/theme/vibrant_ink");
+        document.body.style.backgroundColor = "#202020";
+        document.body.style.color = "white";
+        document.getElementById("newscrollinput").style.backgroundColor = "#202020";
+        document.getElementById("newscrollinput").style.color = "white";        
+    }
+}
+
+document.body.style.backgroundColor = "#202020";
+document.body.style.color = "white";
+document.getElementById("newscrollinput").style.backgroundColor = "#202020";
+document.getElementById("newscrollinput").style.color = "white";        
+
+editor.setTheme("ace/theme/vibrant_ink");
+
+        
+document.getElementById("newscrollinput").value = "";
+
+name = "";
+document.getElementById("newscrollinput").onchange = function(){
+    name = this.value;
+    currentFile = "code/" + name;
+    var httpc = new XMLHttpRequest();
+    httpc.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            filedata = this.responseText;
+            if(filedata.length == 0){
+                scroll = prototypescroll;
+                scroll = scroll.replace(/name/g,name);
+                editor.setValue(scroll);  
+                
+                data = encodeURIComponent(scroll);
+                var httpc = new XMLHttpRequest();
+                var url = "filesaver.php";        
+                httpc.open("POST", url, true);
+                httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+                httpc.send("data="+data+"&filename=" + currentFile);//send text to filesaver.php
+                addcodelink(name);
+                
+            }
+            else{
+                editor.setValue(filedata);                
+            }
+
+            document.getElementById("currentfilename").innerHTML = currentFile;
+        }
+    };
+    httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+    httpc.send();
+    
+}
+
+
+
+function addcodelink(codename){
+    var newscrollbutton = document.createElement("div");
+    newscrollbutton.classList.add("file");
+    newscrollbutton.classList.add("python");
+    newscrollbutton.innerHTML = "code/" + codename;
+    document.getElementById("filescroll").appendChild(newscrollbutton);
+    newscrollbutton.onclick = function(){
+        currentFile = this.innerHTML;
+        //use php script to load current file;
+        var httpc = new XMLHttpRequest();
+        httpc.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                filedata = this.responseText;
+                editor.setValue(filedata);
+                var fileType = currentFile.split("/")[0]; 
+                var fileName = currentFile.split("/")[1];
+              
+            }
+        };
+        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+        httpc.send();
+                
+        document.getElementById("currentfilename").innerHTML = currentFile;
+                
+    }
+}
 
 </script>
 <style>
-body{
-    overflow:hidden;
+#inputtable{
+    position:absolute;
+    left:10px;
+    top:10px;
+    font-family:courier;
 }
-#scrollscroll{
-    padding-left:1em;
-    padding-right:1em;
-    left:0px;
-    bottom:0px;
+#newscrollinput{
+    font-family:courier;
+    
+}
+#linktable{
+    position:absolute;
+    right:10px;
+    top:10px;
+    background-color:#808080;
+}
+body{
+
+    
+}
+input{
+    font-family:courier;
+    color:white;
+}
+
+.file{
+    cursor:pointer;
+    border-radius:0.25em;
+    border:solid;
+    padding:0.25em 0.25em 0.25em 0.25em;
+}
+.files:hover{
+    background-color:green;
+}
+.files:active{
+    background-color:yellow;
+}
+#filescroll{
     position:absolute;
     overflow:scroll;
-    font-size:2em;
-    display:none;
-    z-index:-3;
+    top:250px;
+    bottom:0%;
+    right:0%;
+    left:75%;
+    border:solid;
+    border-radius:5px;
+    border-width:3px;
+    font-family:courier;
+    font-size:22px;
+    z-index:99999999;
 }
-#scrollscroll a{
-    color:#ff2cb4;
-}
-#scrollscroll img{
-    max-width:50%;
-    display:block;
-    margin:auto;
-    background-color:none;
-}
-h1,h2,h3,h4{
-    text-align:center;
-}
-
-#editlink{
+#maineditor{
     position:absolute;
-    right:0px;
-    top:0px;
-    font-size:2em;
+    left:0%;
+    top:5em;
+    bottom:1em;
+    right:30%;
+    font-size:22px;
+    border:solid;
+    border-color:black;
 }
-@media only screen and (orientation: landscape) {
-    #scrollscroll{
-        top:0px;
-        right:100px;
-    }
+.button{
+    cursor:pointer;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
 }
 
-@media only screen and (orientation: portrait) {
-    #scrollscroll{
-        top:100px;
-        right:0px;
-    }
-}
 </style>
+
 </body>
 </html>
